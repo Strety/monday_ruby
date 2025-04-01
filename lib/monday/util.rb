@@ -81,7 +81,7 @@ module Monday
         return value.to_json.to_json if value.is_a?(Hash)
         return value if integer?(value)
 
-        "\"#{value}\""
+        JSON.dump(value)
       end
 
       def integer?(value)
